@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'one_off/file'
-
 module OneOff
   class Migrator
     class << self
