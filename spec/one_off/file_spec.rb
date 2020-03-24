@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'one_off/file'
-
 RSpec.describe OneOff::File do
   subject(:file) { described_class.new(filename) }
 
