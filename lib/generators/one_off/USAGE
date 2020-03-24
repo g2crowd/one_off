@@ -1,0 +1,8 @@
+Description:
+    This generator will create a one_off script to be executed when code is deployed to production.
+
+Example:
+    rails generate one_off name_of_your_task
+
+    This will create:
+        db/one_off/<timestamp>_name_of_your_task.rb
