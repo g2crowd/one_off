@@ -3,9 +3,10 @@
 module OneOff
   class Migrator
     class << self
-      def run(files: pending_files)
+      def run(files: pending_files, async: true)
         files.sort_by(&:version).each do |file|
-          OneOff::ExecutorJob.perform_later(file)
+          method = ActiveModel::Type::Boolean.new.cast(async) ? :perform_later : :perform_now
+          OneOff::ExecutorJob.method(method).call(file)
           Rails.logger.info "=== Queued one_off task #{file.task_name}"
           OneOff::Task.create_or_find_by!(version: file.version)
         end
