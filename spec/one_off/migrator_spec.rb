@@ -15,16 +15,47 @@ RSpec.describe OneOff::Migrator do
     before do
       OneOff::Task.insert_all(%w(20200103125235 20200104115235).map { |v| { version: v } })
       allow(OneOff::ExecutorJob).to receive(:perform_later)
-    end
-
-    it 'queues up job for pending files' do
-      described_class.run
-      expect(OneOff::ExecutorJob).to have_received(:perform_later)
-                                       .with(satisfy { |file| file.version == 20200105184022 })
+      allow(OneOff::ExecutorJob).to receive(:perform_now)
     end
 
     it 'inserts record into database' do
       expect { described_class.run }.to change(OneOff::Task, :count).by(1)
+    end
+
+    context 'when async is truthy' do
+      context 'when aysnc is a boolean' do
+        it 'queues up job for pending files' do
+          described_class.run(async: true)
+          expect(OneOff::ExecutorJob).to have_received(:perform_later)
+                                           .with(satisfy { |file| file.version == 20200105184022 })
+        end
+      end
+
+      context 'when async is a string' do
+        it 'queues up job for pending files' do
+          described_class.run(async: 'true')
+          expect(OneOff::ExecutorJob).to have_received(:perform_later)
+                                           .with(satisfy { |file| file.version == 20200105184022 })
+        end
+      end
+    end
+
+    context 'when async is falsy' do
+      context 'when async is a boolean' do
+        it 'runs job inline for pending files' do
+          described_class.run(async: false)
+          expect(OneOff::ExecutorJob).to have_received(:perform_now)
+                                           .with(satisfy { |file| file.version == 20200105184022 })
+        end
+      end
+
+      context 'when async is a string' do
+        it 'runs job inline for pending files' do
+          described_class.run(async: 'false')
+          expect(OneOff::ExecutorJob).to have_received(:perform_now)
+                                           .with(satisfy { |file| file.version == 20200105184022 })
+        end
+      end
     end
   end
 
