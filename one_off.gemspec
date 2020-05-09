@@ -18,10 +18,11 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  spec.add_dependency 'rails', '~> 6.0.2', '>= 6.0.2.1'
+  spec.add_dependency 'rails', '~> 6.0.3', '>= 6.0.2.1'
 
+  spec.add_development_dependency 'fivemat'
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'rspec-rails', '~> 3.9'
-  spec.add_development_dependency 'rubocop', '~> 0.81'
+  spec.add_development_dependency 'rspec_junit_formatter', '0.4.1'
   spec.add_development_dependency 'simplecov', '0.16.1'
 end
