@@ -1,5 +1,9 @@
+inherit_gem:
+  rubocop-g2:
+    - config/rspec/default.yml
+
+require:
+  - rubocop-rspec
+
 inherit_from:
   - ../.rubocop.yml
-
-Metrics/BlockLength:
-  Enabled: false
