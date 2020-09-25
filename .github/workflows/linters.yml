@@ -3,7 +3,7 @@ name: Linters
 on:
   push:
     branches-ignore:
-      - master
+      - main
 
 jobs:
   build:
@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Rubocop Linter
-        uses: g2crowd/rubocop-linter-action@v3.2.1
+        uses: g2crowd/rubocop-linter-action@v3.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

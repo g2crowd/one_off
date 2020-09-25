@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby: g2crowd/ruby@0.0.4
+  ruby: g2crowd/ruby@0.0.10
 
 workflows:
   version: 2
@@ -9,6 +9,6 @@ workflows:
     jobs:
       - ruby/build:
           context: g2crowd-global
-          ruby: '2.6.6'
-          redis: '2.8'
-          postgres: '12.2'
+          ruby: '2.7.1'
+          postgres: '12.4'
+          bundler-version: '2.1.4'
