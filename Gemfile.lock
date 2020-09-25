@@ -171,5 +171,8 @@ DEPENDENCIES
   rspec_junit_formatter (= 0.4.1)
   simplecov (= 0.16.1)
 
+RUBY VERSION
+   ruby 2.7.1p83
+
 BUNDLED WITH
-   1.17.3
+   2.1.4

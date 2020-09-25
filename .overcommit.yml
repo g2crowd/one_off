@@ -32,7 +32,7 @@ PrePush:
   ProtectedBranches:
     enabled: true
     branches:
-      - master
+      - main
 
 PreCommit:
   RuboCop:
@@ -55,4 +55,4 @@ PreCommit:
   ForbiddenBranches:
     enabled: true
     branch_patterns:
-      - master
+      - main
