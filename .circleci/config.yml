@@ -9,6 +9,6 @@ workflows:
     jobs:
       - ruby/build:
           context: g2crowd-global
-          ruby: '2.7.1'
+          ruby: '2.7.2'
           postgres: '12.4'
           bundler-version: '2.1.4'
