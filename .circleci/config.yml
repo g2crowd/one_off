@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby: g2crowd/ruby@0.0.10
+  ruby: g2crowd/ruby@0.0.13
 
 workflows:
   version: 2
