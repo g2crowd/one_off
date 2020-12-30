@@ -5,6 +5,7 @@ inherit_gem:
 AllCops:
   Exclude:
     - spec/dummy/**/*
+    - gemfiles/*
   NewCops: enable
 
 Style/Documentation:
