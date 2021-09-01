@@ -14,7 +14,7 @@ workflows:
           setup-database: true
           matrix:
             parameters:
-              ruby: ['2.7.2', '3.0.0']
+              ruby: ['2.7.4', '3.0.2']
               appraisal:
                 - rails_6.0
                 - rails_6.1
