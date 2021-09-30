@@ -88,7 +88,7 @@ GEM
     mini_mime (1.1.1)
     minitest (5.14.4)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-darwin)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     pg (1.2.3)
     racc (1.5.2)
@@ -163,6 +163,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  x86_64-darwin-19
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -176,4 +177,4 @@ DEPENDENCIES
   simplecov (= 0.16.1)
 
 BUNDLED WITH
-   2.2.3
+   2.2.22

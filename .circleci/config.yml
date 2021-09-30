@@ -9,7 +9,7 @@ workflows:
     jobs:
       - ruby/appraisal:
           context: g2crowd-global
-          bundler-version: '2.2.3'
+          bundler-version: '2.2.22'
           postgres: '12.4'
           setup-database: true
           matrix:
