@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  ruby: g2crowd/ruby@0.0.16
+  ruby: g2crowd/ruby@0.1.0
 
 workflows:
   version: 2
@@ -9,12 +9,13 @@ workflows:
     jobs:
       - ruby/appraisal:
           context: g2crowd-global
-          bundler-version: '2.2.22'
-          postgres: '12.4'
+          bundler-version: '2.2.32'
+          postgres: '12.8'
           setup-database: true
           matrix:
             parameters:
-              ruby: ['2.7.4', '3.0.2']
+              ruby: ['2.7.5', '3.0.3']
               appraisal:
                 - rails_6.0
                 - rails_6.1
+                - rails_7.0
