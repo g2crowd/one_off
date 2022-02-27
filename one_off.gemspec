@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.description = 'A Rails plugin that creates a one_off script to be executed when code is deployed to production'
   spec.license     = 'MIT'
   spec.required_ruby_version = '>= 2.7'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
@@ -26,5 +27,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'rspec_junit_formatter', '0.4.1'
   spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'rubocop-g2'
   spec.add_development_dependency 'simplecov', '0.16.1'
 end
