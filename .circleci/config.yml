@@ -9,12 +9,12 @@ workflows:
     jobs:
       - ruby/appraisal:
           context: g2crowd-global
-          bundler-version: '2.3.4'
-          postgres: '12.8'
+          bundler-version: '2.3.9'
+          postgres: '12.9'
           setup-database: true
           matrix:
             parameters:
-              ruby: ['2.7.5', '3.0.3', '3.1.0']
+              ruby: ['2.7.5', '3.0.3', '3.1.1']
               appraisal:
                 - rails_6.0
                 - rails_6.1
